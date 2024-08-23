@@ -43,6 +43,7 @@ Begin VB.Form Form1
    Begin VB.ListBox List1 
       Height          =   1230
       Left            =   6000
+      MultiSelect     =   2  'Extended
       TabIndex        =   6
       Top             =   5880
       Width           =   10695
@@ -150,13 +151,31 @@ End Sub
 
 Private Sub Command4_Click()
     
-    List1.ListIndex
+    Select Case List1.SelCount
+    
+    Case Is > 0
+    
+    nombre = Text1(0)
+    apellido = Text1(1)
+    edad = Text1(2)
+    curso = Text1(3)
+    
+    List1.List(List1.ListIndex) = "El alumno " & nombre & " " & apellido & " que tiene " & edad & " años de edad, esta en el curso de " & curso
+    
+    End Select
+    
+    
+    
+'    Print List1.ListIndex
+'
+'    Print List1.SelCount
     
 End Sub
 
 Private Sub List1_Click()
     
     Label2.Caption = List1.ListIndex + 1
+     
     
 End Sub
 
