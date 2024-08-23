@@ -9,6 +9,14 @@ Begin VB.Form Form1
    ScaleHeight     =   10515
    ScaleWidth      =   23190
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton Command5 
+      Caption         =   "Command5"
+      Height          =   975
+      Left            =   13200
+      TabIndex        =   12
+      Top             =   8520
+      Width           =   2055
+   End
    Begin VB.CommandButton Command4 
       Caption         =   "Command4"
       Height          =   615
@@ -114,6 +122,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 Dim nombre, apellido, edad, curso As String
+Dim A As Integer
 
 Private Sub Command1_Click()
     
@@ -169,6 +178,12 @@ Private Sub Command4_Click()
 '    Print List1.ListIndex
 '
 '    Print List1.SelCount
+    
+End Sub
+
+Private Sub Command5_Click()
+    
+    List1.AddItem "hola", 1
     
 End Sub
 
